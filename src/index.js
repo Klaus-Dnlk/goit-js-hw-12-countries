@@ -1,6 +1,7 @@
 import debounce from '../node_modules/lodash.debounce';
 import './sass/main.scss';
 import getRefs from './get-refs';
+import API from './fetchCountries';
 import { alert, defaultModules } from '../node_modules/@pnotify/core/dist/PNotify.js';
 import '@pnotify/core/dist/BrightTheme.css'
 import countryCardTpl from './templates/countrycardTpl.hbs';
@@ -14,7 +15,7 @@ function searchCountry(e) {
   const form = e.target;
   const searchQuery = form.value;
 
-  fetchCountry(searchQuery)
+  API.fetchCountry(searchQuery)
   .then(renderCountryCard)
   .catch(error => {
     alert('Error');
@@ -22,11 +23,11 @@ function searchCountry(e) {
   
 }
 
-function fetchCountry(countryName) {
-  return fetch (
-    `https://restcountries.eu/rest/v2/name/${countryName}`
-    ).then(r => r.json());
-}
+// function fetchCountry(countryName) {
+//   return fetch (
+//     `https://restcountries.eu/rest/v2/name/${countryName}`
+//     ).then(r => r.json());
+// }
 
 function renderCountryCard(country) {
   
@@ -46,17 +47,3 @@ function renderCountryCard(country) {
     refs.markup.innerHTML = listMarkup;
     return;
 }
-
-
-
-
-
-// function renderCountryCard(country) {
-//   const cardMarkup = country.map(countryCardTpl).join('');
-//   refs.markup.innerHTML = cardMarkup;
-//   console.log(country.length);
-// }
-
-
-
-
