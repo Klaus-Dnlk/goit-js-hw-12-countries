@@ -29,10 +29,13 @@ function fetchCountry(countryName) {
 }
 
 function renderCountryCard(country) {
+  
   if(country.length > 10) {
+    refs.markup.innerHTML = "";
     alert({
       text: 'That`s too much! Type again!'
     });
+    
     return;
   } else if(country.length === 1) {
     const cardMarkup = country.map(countryCardTpl).join('');

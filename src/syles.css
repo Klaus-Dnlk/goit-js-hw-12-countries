@@ -42,8 +42,12 @@ body {
 }
 
 .info-item {
-    font-size: 16px;
+    font-size: 20px;
     font-style: bold;
+}
+.info_data {
+    font-size: 16px;
+    font-style: italic;
 }
 
 .flag {

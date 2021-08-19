@@ -2,12 +2,12 @@
     <h2 class="card_title">{{name}}</h1>
     <div class="flex">
         <div class="info">
-            <p class="info_item">Capital: <span>{{capital}}</span></p>
-            <p class="info_item">Population: <span>{{population}}</span></p>
+            <p class="info_item">Capital: <span class="info_data">{{capital}}</span></p>
+            <p class="info_item">Population: <span class="info_data">{{population}}</span></p>
             <p class="info_item">Languages:</p>
             <ul>
               {{#each languages}}  
-                <li class="languange">{{this.name}}</li>
+                <li class="languange" class="info_data">{{this.name}}</li>
               {{/each}}  
             </ul>
         </div>
