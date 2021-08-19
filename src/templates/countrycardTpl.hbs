@@ -1,0 +1,18 @@
+<div class="card ">
+    <h2 class="card_title">{{name}}</h1>
+    <div class="flex">
+        <div class="info">
+            <p class="info_item">Capital: <span>{{capital}}</span></p>
+            <p class="info_item">Population: <span>{{population}}</span></p>
+            <p class="info_item">Languages:</p>
+            <ul>
+              {{#each languages}}  
+                <li class="languange">{{this.name}}</li>
+              {{/each}}  
+            </ul>
+        </div>
+        <div class="flag">
+            <img src="{{flag}}" alt="{{name}}" class="flag_img">
+        </div>
+    </div>
+</div>
